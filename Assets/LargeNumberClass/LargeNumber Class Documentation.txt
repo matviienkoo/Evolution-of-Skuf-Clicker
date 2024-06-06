@@ -1,0 +1,37 @@
+This asset is a single script. It is for handling very large numbers for clicker and other types of games. It can go to numbers as high as 999.999.. Quadragintillion (10^123 decimal places).
+
+I made the numbers in increments of 3 digit segments for the large number naming convention of the short scale used by US, Canada and modern British.
+
+The large number class does not derive from monobehaviour so to create one you do it with the new keyword.
+LargeNumber largeNumber=new LargeNumber();
+
+There are 3 contructors, one with no arguments, one with 1 argument and one with 2 arguments.
+
+LargeNumber largeNumber = new LargeNumber();
+Creates a Lage number that equals 0.
+
+LargeNumber largeNumber = new LargeNumber(x);
+Creates a Lage number that equals x, where x equals 0-999, numbers lager than 999 will result in 999.
+LargeNumber largeNumberOneHundred = new LargeNumber(100);
+Creates a Lage number that equals 100.
+
+LargeNumber largeNumber = new LargeNumber(x,y);
+Creates a Lage number where x equals 0-999, values for x lager than 999 will result in 999, with y*3 zeros after it, values for y over 41 is passed it will become 41. Because the numbers are divided into segments of 3 you need to divided the decimal places by 3 if you want to specify a particular number, so the maximum value for the second parameter is 41 which is 1 Quadragintillion or 10^123.
+LargeNumber largeNumberTwentyDuodecillion = new LargeNumber(20,13);
+20 with 13*3 or 39 zeros after it.
+
+
+Helper methods
+
+I created methods for assign and equals rather than over load the = and == operators.
+public void Assign(LargeNumber p_num) //assigns the value of one large number to another
+public int Equals(LargeNumber p_compare) //comapares 2 large numbers returning 0 for equal 1 if p_compare is less, -1 if p_compare is more
+
+public void AddOne()
+public void SubOne()
+public void AddLargeNumber(LargeNumber p_amount)
+public void SubLargeNumber(LargeNumber p_amount)
+public string LargeNumberToString() //converts the Large number into a string
+public string LargeNumberToShortString() //converts the Large number into a string int the format of 374.473 million.
+
+There are other methods that work behind the scenes you will not need to use.

@@ -1,0 +1,2 @@
+Build path: C:/Users/vladm/Desktop/Проекты и их данные/Файлы игры Эволюция Скуфа Кликер
+Build number: 230
